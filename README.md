@@ -1,5 +1,15 @@
 # vue-juejin
 
+    vue2.5 + vue-cli3.0 + axios
+
+## TODO
+
+- [ ] 首页
+- [ ] 动态
+- [ ] 发现
+- [ ] 小册
+- [ ] 我
+
 ## Project setup
 ```
 npm install

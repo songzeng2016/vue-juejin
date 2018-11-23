@@ -1,5 +1,5 @@
 <template>
-    <div>activities</div>
+  <div>activities</div>
 </template>
 
 <script type="text/ecmascript-6">

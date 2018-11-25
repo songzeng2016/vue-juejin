@@ -8,6 +8,9 @@
 - [ ] 动态
 - [ ] 发现
 - [ ] 小册
+    - [X] 获取数据
+    - [ ] better-scroll 解决滚动问题
+    - [ ] loading 组件（create-api 优化）
 - [ ] 我
 
 ## Project setup

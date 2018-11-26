@@ -16,7 +16,7 @@
     },
     data() {
       return {
-        tabIndex: 1,
+        tabIndex: 3,
         tabBar: {
           color: '#a2a2a2',
           selectedColor: '#007aff',

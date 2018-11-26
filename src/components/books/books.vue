@@ -1,5 +1,5 @@
 <template>
-  <div class="main">
+  <div class="books" v-loading="loading">
     <ul class="list-wrapper">
       <li class="list" v-for="(item, index) in list" :key="index">
         <img class="img" :src="item.url" alt="">
@@ -16,6 +16,7 @@
   export default {
     data() {
       return {
+        loading: false,
         list: [],
       };
     },
@@ -24,6 +25,7 @@
     },
     methods: {
       _getList() {
+        this.loading = true;
         this.$get('/v1/getListByLastTime', {
           uid: '',
           client_id: '',
@@ -34,6 +36,8 @@
         }).then(json => {
           console.log(json);
           this.list = json.d;
+        }).finally(() => {
+          this.loading = false;
         });
       }
     },
@@ -41,7 +45,8 @@
 </script>
 
 <style lang="stylus" type="text/stylus" scoped>
-  .main
+  .books
+    position: relative
     height: 100%
     overflow: auto
     .list-wrapper

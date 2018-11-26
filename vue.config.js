@@ -9,6 +9,7 @@ module.exports = {
     config.resolve.alias
       .set('components', resolve('src/components'))
       .set('common', resolve('src/common'))
+      .set('base', resolve('src/base'))
   },
   // 修改的配置
   devServer: {

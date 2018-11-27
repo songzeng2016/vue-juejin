@@ -13,6 +13,8 @@
 </template>
 
 <script type="text/ecmascript-6">
+  import {requestParameters} from 'common/js/api';
+
   export default {
     data() {
       return {
@@ -26,12 +28,8 @@
     methods: {
       _getList() {
         this.loading = true;
-        this.$get('/v1/getListByLastTime', {
-          uid: '',
-          client_id: '',
-          token: '',
-          src: 'web',
-          alias: '',
+        this.$get(requestParameters.url_getListByLastTime, {
+          ...requestParameters.arg_getListByLastTime,
           pageNum: 1,
         }).then(json => {
           console.log(json);
@@ -39,7 +37,7 @@
         }).finally(() => {
           this.loading = false;
         });
-      }
+      },
     },
   };
 </script>

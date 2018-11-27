@@ -9,7 +9,7 @@
 - [ ] 发现
 - [ ] 小册
     - [X] 获取数据
-    - [ ] better-scroll 解决滚动问题
+    - [X] better-scroll 解决滚动问题（better-scroll 组件封装）
     - [ ] loading 组件（create-api 优化）（自定义指令 √）
     - [ ] 图片懒加载
     - [ ] 下拉刷新

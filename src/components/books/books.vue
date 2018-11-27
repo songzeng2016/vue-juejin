@@ -1,5 +1,5 @@
 <template>
-  <div class="books" v-loading="loading">
+  <div class="books" ref="books" v-loading="loading">
     <ul class="list-wrapper">
       <li class="list" v-for="(item, index) in list" :key="index">
         <img class="img" :src="item.url" alt="">
@@ -14,6 +14,7 @@
 
 <script type="text/ecmascript-6">
   import {requestParameters} from 'common/js/api';
+  import BScroll from 'better-scroll';
 
   export default {
     data() {
@@ -34,6 +35,14 @@
         }).then(json => {
           console.log(json);
           this.list = json.d;
+          this.$nextTick(() => {
+            this.scroll = new BScroll(this.$refs.books, {
+              scrollbar: {
+                fade: true,
+                interactive: false,
+              },
+            });
+          })
         }).finally(() => {
           this.loading = false;
         });
@@ -46,7 +55,7 @@
   .books
     position: relative
     height: 100%
-    overflow: auto
+    overflow: hidden
     .list-wrapper
       .list
         display: flex
